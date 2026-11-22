@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "node test/phone-os.test.mjs"
   },
   "dependencies": {
     "@use-gesture/react": "^10.3.1",
