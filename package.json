@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm --filter neon-highway-drive dev",
+    "dev:highway": "pnpm --filter neon-highway-drive dev",
     "dev:phone": "pnpm --filter in-browser-phone-os dev",
+    "dev:chat": "pnpm --filter real-time-crew-chat dev",
+    "dev": "pnpm --filter neon-highway-drive dev",
     "build": "pnpm -r build",
     "build:highway": "pnpm --filter neon-highway-drive build",
     "build:phone": "pnpm --filter in-browser-phone-os build",
+    "build:chat": "pnpm --filter real-time-crew-chat build",
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r typecheck"
   },
