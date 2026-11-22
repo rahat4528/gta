@@ -9,6 +9,7 @@
     "start": "cross-env NODE_ENV=production PORT=3003 tsx server.ts",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
+    "test": "node test/chat-reliability.test.mjs",
     "test:realtime": "node scripts/verify-realtime.mjs",
     "db:generate": "prisma generate"
   },
