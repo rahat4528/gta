@@ -9,6 +9,7 @@
     "start": "next start -p 3004",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
+    "test": "node test/briefing-schemas.test.mjs",
     "test:briefing": "tsx scripts/verify-briefing.ts"
   },
   "dependencies": {
