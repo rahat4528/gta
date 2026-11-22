@@ -1,67 +1,115 @@
-# Neon Monorepo
+# GTA V Five Independent Simulation & Engineering Projects
 
-Monorepo containing five independent applications themed around futuristic web simulations, interactive OS experiences, and real-time engineering systems.
+This repository contains **exactly five independent projects**, each built completely separately in its own self-contained folder with its own codebase, structure, components, dependencies, build pipeline, and dev port.
 
-## Monorepo Status Matrix
-
-| App | Port | Status | Known Gaps |
-| :--- | :---: | :---: | :--- |
-| **Neon Highway Drive** (`apps/neon-highway-drive`) | 3001 | Done | None (Full procedural endless simulation, shaders, HUD, controls, audio) |
-| **In-Browser Phone OS** (`apps/in-browser-phone-os`) | 3002 | Done | None (Lock screen, swipe gestures, 7 interactive apps, Zustand store, audio) |
-| **Real-Time Crew Chat** (`apps/real-time-crew-chat`) | 3003 | Done | None (Real-time socket engine, offline queue, deduplication, reactions, presence; WebRTC audio planned for future) |
-| **AI Mission Briefings** (`apps/ai-mission-briefings`) | 3004 | Done | None (Streaming token typewriter, tool validation, intelligence cards, mission history; real OpenAI key optional via mock provider) |
-| **Scroll-Driven Newspaper** (`apps/scroll-driven-newspaper`) | 3005 | In progress | Building Project 5 (Next.js, GSAP ScrollTrigger, Lenis, Tailwind) |
+No applications import code from each other, and all projects are completely decoupled with zero shared package dependencies.
 
 ---
 
-## Apps Overview
+## Projects Matrix
 
-- **Neon Highway Drive** (`apps/neon-highway-drive`): Endless, rain-soaked neon cyberpunk highway driving simulation built with React Three Fiber, TypeScript, drei, custom GLSL shaders, and Tailwind CSS. Runs on port 3001.
-- **In-Browser Phone OS** (`apps/in-browser-phone-os`): Interactive smartphone OS simulation running in the browser, built with React, TypeScript, Motion, use-gesture, Zustand, and Tailwind CSS. Runs on port 3002.
-- **Real-Time Crew Chat** (`apps/real-time-crew-chat`): Real-time collaborative team chat platform with custom Next.js + Socket.IO server, PostgreSQL & Prisma, TanStack Query, resilient offline queue, message deduplication, presence sync, and typing indicators. Runs on port 3003.
-- **AI Mission Briefings** (`apps/ai-mission-briefings`): Real-time streaming AI mission intelligence interface built with Next.js, Vercel AI SDK, Zod, and Tailwind CSS. Transforms tool calls into interactive structured intelligence cards with offline mock provider support. Runs on port 3004.
-- **Scroll-Driven Newspaper** (`apps/scroll-driven-newspaper`): Immersive broadsheet journalism platform (*The Los Santos Chronicle / Weazel News*) built with Next.js, GSAP ScrollTrigger, Lenis smooth scrolling, Tailwind CSS, and TypeScript. Runs on port 3005.
+| Project | Folder | Port | Stack | Status |
+| :--- | :--- | :---: | :--- | :---: |
+| **1. Neon Highway Drive** | `neon-highway-drive/` | `3001` | React Three Fiber, TypeScript, drei, GLSL Shaders, Tailwind CSS | **Done** |
+| **2. In-Browser Phone OS** | `in-browser-phone-os/` | `3002` | React, TypeScript, Motion, use-gesture, Zustand, Tailwind CSS | **Done** |
+| **3. Real-Time Crew Chat** | `real-time-crew-chat/` | `3003` | Next.js, TypeScript, Socket.IO, TanStack Query, Prisma, Tailwind CSS | **Done** |
+| **4. AI Mission Briefings** | `ai-mission-briefings/` | `3004` | Next.js, TypeScript, Vercel AI SDK, Zod, Tailwind CSS | **Done** |
+| **5. Scroll-Driven Newspaper** | `scroll-driven-newspaper/` | `3005` | Next.js, TypeScript, GSAP ScrollTrigger, Lenis, Tailwind CSS | **Done** |
 
 ---
 
-## Directory Structure
+## Repository Structure
 
 ```
-neon-monorepo/
-├── apps/
-│   ├── ai-mission-briefings/     # Port 3004 (Next.js, Vercel AI SDK, Zod)
-│   ├── in-browser-phone-os/      # Port 3002 (React, Motion, use-gesture, Zustand)
-│   ├── neon-highway-drive/       # Port 3001 (React Three Fiber, drei, GLSL)
-│   ├── real-time-crew-chat/      # Port 3003 (Next.js, Socket.IO, Prisma)
-│   └── scroll-driven-newspaper/  # Port 3005 (Next.js, GSAP ScrollTrigger, Lenis)
-├── packages/
-│   └── config/                   # Shared ESLint, Prettier, TSConfig
-├── pnpm-workspace.yaml
-├── package.json
+gta/
+├── neon-highway-drive/           # Project 1: Endless 3D neon driving simulation (Port 3001)
+│   ├── src/components/           # 3D highway, city, vehicle, HUD, effects, shaders
+│   ├── package.json              # Standalone dependencies and build scripts
+│   ├── tsconfig.json             # Self-contained TypeScript configuration
+│   └── README.md
+│
+├── in-browser-phone-os/          # Project 2: Interactive mobile phone OS (Port 3002)
+│   ├── src/apps/                 # 7 functional apps (Clock, Calc, Notes, Gallery, Music, etc.)
+│   ├── src/components/           # Lock screen, dynamic island, control center, gestures
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── README.md
+│
+├── real-time-crew-chat/          # Project 3: Resilient team chat & presence engine (Port 3003)
+│   ├── server/                   # Standalone Node + Socket.IO server & Prisma DB service
+│   ├── src/components/           # Real-time message feed, channel switcher, presence roster
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── README.md
+│
+├── ai-mission-briefings/         # Project 4: Streaming AI mission briefing terminal (Port 3004)
+│   ├── src/ai/                   # Providers (Mock & OpenAI), Zod schemas, server tool calls
+│   ├── src/components/           # Typewriter streaming, intelligence cards, mission history
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── README.md
+│
+├── scroll-driven-newspaper/      # Project 5: Broadsheet investigative newspaper (Port 3005)
+│   ├── src/components/           # Pinned evidence dossier, multiplane parallax, breaking ticker
+│   ├── src/animations/           # Lenis smooth scroll ticker & GSAP ScrollTrigger sync
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── README.md
+│
+├── package.json                  # Root workspace runner scripts
+├── pnpm-workspace.yaml           # Workspace registry pointing to the 5 project folders
 └── README.md
 ```
 
 ---
 
-## Quick Start & Commands
+## Running Each Project Independently
+
+Every project is completely self-contained and can be run independently from within its own directory:
 
 ```bash
-# Install monorepo dependencies
+# Project 1: Neon Highway Drive (Port 3001)
+cd neon-highway-drive
 pnpm install
+pnpm dev
 
-# Run all quality checks across the workspace
-pnpm typecheck
-pnpm lint
-pnpm build
+# Project 2: In-Browser Phone OS (Port 3002)
+cd in-browser-phone-os
+pnpm install
+pnpm dev
 
-# Start individual development servers
-pnpm dev:highway      # Port 3001 - Neon Highway Drive
-pnpm dev:phone        # Port 3002 - In-Browser Phone OS
-pnpm dev:chat         # Port 3003 - Real-Time Crew Chat
-pnpm dev:briefings    # Port 3004 - AI Mission Briefings
-pnpm dev:newspaper    # Port 3005 - Scroll-Driven Newspaper
+# Project 3: Real-Time Crew Chat (Port 3003)
+cd real-time-crew-chat
+pnpm install
+pnpm dev
 
-# Run automated tests
-pnpm --filter real-time-crew-chat test:realtime
-pnpm --filter ai-mission-briefings test:briefing
+# Project 4: AI Mission Briefings (Port 3004)
+cd ai-mission-briefings
+pnpm install
+pnpm dev
+
+# Project 5: Scroll-Driven Newspaper (Port 3005)
+cd scroll-driven-newspaper
+pnpm install
+pnpm dev
+```
+
+---
+
+## Convenience Workspace Commands
+
+From the root directory, convenience scripts are available to run, test, or build across all projects:
+
+```bash
+# Start any individual dev server
+pnpm dev:highway       # Port 3001
+pnpm dev:phone         # Port 3002
+pnpm dev:chat          # Port 3003
+pnpm dev:briefings     # Port 3004
+pnpm dev:newspaper     # Port 3005
+
+# Workspace verification
+pnpm typecheck         # Typechecks all 5 projects
+pnpm lint              # Lints all 5 projects
+pnpm build             # Builds all 5 projects for production
 ```

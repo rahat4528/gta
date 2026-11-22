@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-paper-100 text-ink-900 font-serif antialiased;
+    background-color: #f9f5ec;
+  }
+
+  ::selection {
+    @apply bg-crime-red text-paper-50;
+  }
+}
+
+/* Halftone / Newsprint texture simulation */
+.newsprint-texture {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 0);
+  background-size: 8px 8px;
+}
+
+/* Custom scrollbar for classic paper feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0e9d8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2c251d;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c0262d;
+}

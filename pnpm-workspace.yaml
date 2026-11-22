@@ -1,6 +1,9 @@
 packages:
-  - 'apps/*'
-  - 'packages/*'
+  - 'neon-highway-drive'
+  - 'in-browser-phone-os'
+  - 'real-time-crew-chat'
+  - 'ai-mission-briefings'
+  - 'scroll-driven-newspaper'
 
 allowBuilds:
   '@prisma/client': true
