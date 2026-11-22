@@ -6,11 +6,13 @@
     "dev:highway": "pnpm --filter neon-highway-drive dev",
     "dev:phone": "pnpm --filter in-browser-phone-os dev",
     "dev:chat": "pnpm --filter real-time-crew-chat dev",
+    "dev:briefings": "pnpm --filter ai-mission-briefings dev",
     "dev": "pnpm --filter neon-highway-drive dev",
     "build": "pnpm -r build",
     "build:highway": "pnpm --filter neon-highway-drive build",
     "build:phone": "pnpm --filter in-browser-phone-os build",
     "build:chat": "pnpm --filter real-time-crew-chat build",
+    "build:briefings": "pnpm --filter ai-mission-briefings build",
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r typecheck"
   },
