@@ -1,16 +1,20 @@
 import js from '@eslint/js';
-import tsPlugin from 'typescript-eslint';
+import tseslint from 'typescript-eslint';
 
-export default [
-  js.configs.recommended,
-  ...tsPlugin.configs.recommended,
+export default tseslint.config(
+  { ignores: ['.next/**', 'dist/**', 'node_modules/**', 'next-env.d.ts'] },
   {
-    ignores: ['.next/**', 'dist/**', 'node_modules/**'],
-  },
-  {
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    files: ['**/*.{ts,tsx}'],
+    languageOptions: {
+      ecmaVersion: 2022,
+    },
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' },
+      ],
     },
-  },
-];
+  }
+);
