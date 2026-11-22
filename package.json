@@ -1,0 +1,14 @@
+{
+  "name": "neon-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter neon-highway-drive dev",
+    "build": "pnpm --filter neon-highway-drive build",
+    "lint": "pnpm --filter neon-highway-drive lint",
+    "typecheck": "pnpm --filter neon-highway-drive typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
