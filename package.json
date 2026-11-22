@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "pnpm --filter neon-highway-drive dev",
-    "build": "pnpm --filter neon-highway-drive build",
-    "lint": "pnpm --filter neon-highway-drive lint",
-    "typecheck": "pnpm --filter neon-highway-drive typecheck"
+    "dev:phone": "pnpm --filter in-browser-phone-os dev",
+    "build": "pnpm -r build",
+    "build:highway": "pnpm --filter neon-highway-drive build",
+    "build:phone": "pnpm --filter in-browser-phone-os build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck"
   },
   "devDependencies": {
     "typescript": "^5.7.3"
