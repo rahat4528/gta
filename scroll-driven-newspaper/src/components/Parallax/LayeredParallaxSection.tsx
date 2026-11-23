@@ -2,9 +2,8 @@
 
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { initScrollTrigger } from '../../animations/scroll/initScrollTrigger';
-import { Layers, Quote, ArrowDownRight } from 'lucide-react';
+import { Layers, Quote } from 'lucide-react';
 
 interface LayeredParallaxSectionProps {
   reducedMotion?: boolean;

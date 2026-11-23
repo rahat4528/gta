@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { initScrollTrigger } from '../../animations/scroll/initScrollTrigger';
-import { ShieldCheck, FileText, AlertTriangle, Database, Lock } from 'lucide-react';
+import { Database, Lock } from 'lucide-react';
 
 interface PinnedInvestigativeProps {
   reducedMotion?: boolean;

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ARTICLES } from '../../data/articles';
-import { Search, X, ArrowRight, Clock } from 'lucide-react';
+import { Search, X, Clock } from 'lucide-react';
 
 interface SearchModalProps {
   isOpen: boolean;
