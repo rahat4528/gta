@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare module '@react-three/fiber' {
   import React from 'react';
   import * as THREE from 'three';
