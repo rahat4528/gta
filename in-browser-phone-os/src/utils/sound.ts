@@ -43,7 +43,7 @@ class AudioSynthesizer {
 
       osc.start();
       osc.stop(ctx.currentTime + 0.035);
-    } catch (_err) {
+    } catch {
       // Audio autoplay policy fallback
     }
   }
@@ -67,7 +67,7 @@ class AudioSynthesizer {
 
       osc.start();
       osc.stop(ctx.currentTime + 0.07);
-    } catch (_err) {
+    } catch {
       // Ignore audio error
     }
   }
@@ -91,7 +91,7 @@ class AudioSynthesizer {
 
       osc.start();
       osc.stop(ctx.currentTime + 0.13);
-    } catch (_err) {
+    } catch {
       // Ignore audio error
     }
   }
@@ -119,7 +119,7 @@ class AudioSynthesizer {
         osc.start(now + idx * 0.04);
         osc.stop(now + idx * 0.04 + 0.38);
       });
-    } catch (_err) {
+    } catch {
       // Ignore audio error
     }
   }
@@ -151,7 +151,7 @@ class AudioSynthesizer {
       gain.connect(ctx.destination);
 
       whiteNoise.start();
-    } catch (_err) {
+    } catch {
       // Ignore audio error
     }
   }
@@ -215,7 +215,7 @@ class AudioSynthesizer {
 
       playChord();
       this.musicInterval = window.setInterval(playChord, beatDuration * 2);
-    } catch (_err) {
+    } catch {
       // Ignore audio error
     }
   }

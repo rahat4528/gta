@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare module '@use-gesture/react' {
   export interface GestureState {
     movement: [number, number];
